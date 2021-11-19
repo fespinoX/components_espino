@@ -2,40 +2,126 @@
     font-family: sans-serif;
 }
 
+.body {
+    background-color: #000;
+} 
+
 h1 {
     display: inline-block;
     width: auto!important;
     padding: 5px 20px;
-    color: magenta;
-    background-color: black;
+    background-color: cyan;
+    color: black;
 }
 
-p {
-    font-size: 1.2rem;
-}
-
-.card-comida {
-    width: 25%;
-    margin: 20px 5px;
-    border: 1px solid coral;
-}
-
-.card-comida img {
-    height: ;
-}
-
-.card-comida ul {
-    list-style: none;
+.bg-select {
     padding: 10px;
-}
-
-.card-comida .comida-title {
-    font-weight: 600;
-    font-size: 2rem;
-    color: tomato;
-}
-
-.card-comida .comida-costo {
-    color: olive;
     font-size: 1.2rem;
+    background-color: transparent;
+    color: #FFF;
+    border-color: cyan;
+}
+
+.mensajito {
+    margin-top: 15px;
+    font-size: 1.5rem;
+    background-color: #ffee00;
+    color: #000;
+}
+
+img {
+    max-width: 100%;
+}
+
+
+
+/* Table */
+
+.table-juegos {
+    margin-top: 20px;
+    border: 2px solid;
+    color: #FFF;
+}
+
+.table-juegos .juegos-head {
+    border-bottom: 2px solid;
+}
+
+.table-juegos td {
+    padding: 20px;
+}
+
+.table-title {
+    text-align: center;
+    font-variant: small-caps;
+    font-size: 1.2rem;
+    line-height: 3rem;
+}
+
+.table-juegos .juegos-row {
+    border-bottom: 1px solid;
+}
+
+.table-juegos .btn {
+    font-weight: 600;
+    font-size: .8rem;
+    text-transform: uppercase;
+}
+
+.table-juegos .juego-titulo {
+    font-size: 1.2rem;
+    font-weight: 600;
+}
+
+
+/* Conditional styling */
+
+.style-party {
+    background-color: #88104c69;
+    border-color: magenta;
+}
+
+.style-medio {
+    background-color: #ff510052;
+    border-color: #ff5100;
+}
+
+.style-pro {
+    background-color: #ffee0057;
+    border-color: #ffee00;
+}
+
+.style-basic {
+    background-color: rgba(255, 255, 255, 0.356);
+    border-color: #FFF;
+}
+
+.style-party .juegos-row {
+    border-color: magenta;
+}
+.style-medio .juegos-row {
+    border-color: #ff5100;
+}
+.style-pro .juegos-row {
+    border-color: #ffee00;
+}
+.style-basic .juegos-row {
+    border-color: #FFF;
+}
+
+.style-party .btn {
+    border-color: magenta;
+    color: magenta;
+}
+.style-medio .btn {
+    border-color: #ff5100;
+    color: #ff5100;
+}
+.style-pro .btn {
+    border-color: #ffee00;
+    color: #ffee00;
+}
+.style-basic .btn {
+    border-color: #FFF;
+    color: #FFF;
 }

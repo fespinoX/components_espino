@@ -13,33 +13,35 @@
     <script src="https://cdn.jsdelivr.net/npm/vue@2.6.14/dist/vue.js"></script>
     <script defer src="scripts/app.js"></script>
 </head>
-<body>
+<body class="body">
     <div id="app">
         <div class="container">
             <div class="row">
-                <h1 class="my-4"></h1>
                 <div class="col-12 d-flex">
-                    <select v-model="tipoDeJuego" aria-label="Selector de tipo de juegos">
-                        <option disabled value="">¿Qué tipo de juego estás buscando?</option>
+                    <h1 class="my-4">Boardgametor 2000</h1>
+                </div>
+                <div class="col-12 d-flex">
+                    <select class="bg-select my-4" v-model="tipoDeJuego" aria-label="Selector de tipo de juegos">
+                        <option class="disabled" disabled value="">¿Qué tipo de juego estás buscando?</option>
                         <option value="party">Casual</option>
                         <option value="medio">Mediano</option>
                         <option value="pro">Pro</option>
                     </select>
                 </div>
                 <div v-if="this.tipoDeJuego == 'party'" class="col-12 d-flex">
-                    <tabla-juegos :tipo="bgParty"></lista-comida>
+                    <tabla-juegos :css-class="'style-party'" :tipo="bgParty"></lista-comida>
                 </div>
 
                 <div v-else-if="this.tipoDeJuego == 'medio'" class="col-12 d-flex">
-                    <tabla-juegos :tipo="bgMedio"></lista-comida>
+                    <tabla-juegos :css-class="'style-medio'" :tipo="bgMedio"></lista-comida>
                 </div>
 
                 <div v-else-if="this.tipoDeJuego == 'pro'" class="col-12 d-flex">
-                    <tabla-juegos :tipo="bgPro"></lista-comida>
+                    <tabla-juegos :css-class="'style-pro'" :tipo="bgPro"></lista-comida>
                 </div>
 
                 <div v-else class="col-12 d-flex">
-                    <p>{{msgElegir}}</p>
+                    <p class="mensajito">{{msgElegir}}</p>
                 </div>
 
 

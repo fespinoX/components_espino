@@ -1,43 +1,41 @@
 Vue.component("tabla-juegos", {
   props: {
-    tipo: Array,
-    titulo: String,
-    jugadoresMin: Number,
-    jugadoresMax: Number,
-    tiempoDeJuego: Number,
-    foto: String,
-    descripcion: String,
-    linkBgg: String,
-    cssClass: String,
+    tipo: {
+      type: Array,
+    },
+    cssClass: {
+      type: String,
+      default: 'style-basic',
+    }
   },
-    template: `
-      <div>
-        <table class="cssClass">
-          <thead>
-            <tr>
-              <th scope="col">Foto</th>
-              <th scope="col">Nombre</th>
-              <th scope="col">Jugadores</th>
-              <th scope="col">Tiempo de juego</th>
-              <th scope="col">Descripción</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr v-for="(juego, i) in tipo" :key="i" :titulo="juego.titulo" :jugadoresMin="juego.jugadoresMin" :jugadoresMax="juego.jugadoresMax">
-              <td><img :src="juego.foto" :alt="juego.titulo"/></td>
-              <td>{{juego.titulo}}</td>
-              <td>{{juego.jugadoresMin}}-{{juego.jugadoresMax}}</td>
-              <td>{{juego.tiempoDeJuego}} minutos</td>
-              <td>
-                <p>{{juego.descripcion}}</p>
-                <a class="btn" target="_blank" :href="juego.linkBgg">Ver en BGG</a>
-              </td>
-            </tr>
-          </tbody>
-        </table>
-      </div>
-    `,
-});
+  template: `
+    <div>
+      <table :class="['table-responsive', 'table-juegos', cssClass]">
+        <thead class="juegos-head">
+          <tr>
+            <th class="table-title" scope="col">Foto</th>
+            <th class="table-title" scope="col">Nombre</th>
+            <th class="table-title" scope="col">Jugadores</th>
+            <th class="table-title" scope="col">Tiempo</th>
+            <th class="table-title" scope="col">Descripción</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr class="juegos-row" v-for="(juego, i) in tipo" :key="i" :titulo="juego.titulo" :jugadoresMin="juego.jugadoresMin" :jugadoresMax="juego.jugadoresMax">
+            <td><img :src="juego.foto" :alt="juego.titulo"/></td>
+            <td class="juego-titulo">{{juego.titulo}}</td>
+            <td>{{juego.jugadoresMin}}-{{juego.jugadoresMax}}</td>
+            <td>{{juego.tiempoDeJuego}}'</td>
+            <td>
+              <p>{{juego.descripcion}}</p>
+              <a class="btn" target="_blank" :href="juego.linkBgg">Ver en BGG</a>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  `
+})
 
 var myapp = new Vue({
   el: '#app',
@@ -171,9 +169,4 @@ var myapp = new Vue({
       }
     ]
   },
-  methods: {
-  },
-  computed: {
-
-  }
 })
