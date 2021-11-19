@@ -1,0 +1,41 @@
+* {
+    font-family: sans-serif;
+}
+
+h1 {
+    display: inline-block;
+    width: auto!important;
+    padding: 5px 20px;
+    color: magenta;
+    background-color: black;
+}
+
+p {
+    font-size: 1.2rem;
+}
+
+.card-comida {
+    width: 25%;
+    margin: 20px 5px;
+    border: 1px solid coral;
+}
+
+.card-comida img {
+    height: ;
+}
+
+.card-comida ul {
+    list-style: none;
+    padding: 10px;
+}
+
+.card-comida .comida-title {
+    font-weight: 600;
+    font-size: 2rem;
+    color: tomato;
+}
+
+.card-comida .comida-costo {
+    color: olive;
+    font-size: 1.2rem;
+}
